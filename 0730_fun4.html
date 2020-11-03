@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/0730_fun4.js"></script>
+</head>
+
+<body>
+
+    <style>
+        .fun_ex3 figure {
+            margin: 0;
+            width: 100px; height: 100px;
+            overflow: hidden;
+        }
+
+        .fun_ex3 figure p {
+            margin: 0; font-size: 0;
+            width: 100%; height: 100%;
+            left: 0;
+            position: relative;
+            /*border: 2px solid #f00;*/
+            transition: .5s;
+        }
+
+        .fun_ex3 figure img {
+            position: absolute;
+            width: 100px; height: 100%;
+        }
+    </style>
+
+    <div class="fun_ex3">
+        <figure>
+            <p>
+                <img src="img/f01.jpg">
+                <img src="img/f02.jpg">
+                <img src="img/f03.jpg">
+            </p>
+        </figure>
+
+        <div>
+            <button>Prev</button>
+            <button>Next</button>
+        </div>
+
+    </div>
+
+</body></html>

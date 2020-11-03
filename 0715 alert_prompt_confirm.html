@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="promt_result"></div>
+    <div class="confirm_result"></div>
+
+    <script>
+        var p_result = document.querySelector('.promt_result');
+        var c_result = document.querySelector('.confirm_result');
+
+        p_result.innerHTML = '<h1>hello</h1>'; /*innerHTML : 태그 인지*/
+        c_result.textContent = 'world';
+
+        /* var p_data = prompt('당신이 좋아하는 과일은?');
+        p_result.innerHTML = p_data;
+        var c_data = prompt('당신이 좋아하는 계절은?');
+        c_result.textContent = c_data; */
+
+        var p_data1 = prompt('당신의 이름은?');
+        var p_data2 = prompt('당신이 좋아하는 과일은?');
+        var p_data3 = prompt('당신이 좋아하는 숫자는?');
+        p_result.textContent = p_data1 + "님이 좋아하는 과일은 " + p_data2 + "이고 좋아하는 숫자는 " + p_data3 + "입니다.";
+
+        /* Boolean : 확인true or 취소false */
+        var c_data = confirm('퇴근하시겠습니까?');
+        c_result.textContent = c_data;
+        
+        console.log(c_data); /*콘솔창에서 출력값 확인*/
+        p_data3 = Number('p_data3'); /*컨퍼런트,오브젝트 대문자 시작*/
+        p_data3 = String('p_data3');
+        
+        /*console.log(typeof p_data3);*/ /* typeof : data type 확인할 때 */
+        /*어떤 값을 넣어서 출력하면 숫자를 넣어도 문자string로 인식.*/
+        
+        alert(c_data); /*결과값을 새창으로 알려줌*/
+        
+        //함수명 (데이터명);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="c_result"></div>
+
+    <div class="adult">
+        <input type="number" name="age" placeholder="나이를 입력하세요">
+        <input type="submit" name="ok">
+    </div>
+    
+    <div class="result"></div>
+
+
+    <script>
+        
+        var c_result = document.querySelector('.c_result');
+
+        var age = document.querySelector('input[name=age]');
+        var button = document.querySelector('input[name=ok]');
+        var result = document.querySelector('.result');
+        
+        
+        button.addEventListener('click',function(){
+            var ageValue = age.value;
+            /*alert(ageValue);*/
+            
+            if(ageValue >= Number(19)){
+                result.textContent = 'WELCOM';
+            }else{
+                result.textContent = 'ONLY FOR ADULT';
+            }
+        });
+        
+             var c_data = confirm('게임에 참여하시겠습니까?');
+        c_result.textContent = c_data;
+        if(c_data == true){
+            c_result.textContent = 'Confirm';
+        }else{
+            c_result.textContent = 'Sorry'
+        }
+        
+/*
+        console.log(typeof c_data);
+*/
+       
+        
+        
+    </script>
+
+
+
+
+
+</body>
+
+</html>

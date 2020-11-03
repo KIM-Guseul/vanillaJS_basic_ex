@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article class="calc_1">
+        <h2>산술 연산자</h2>
+        <div></div>
+    </article>
+
+    <article class="calc_2">
+        <h2>할당 연산자</h2>
+        <div></div>
+    </article>
+
+    <article class="calc_3">
+        <h2>비교 연산자</h2>
+        <div></div>
+    </article>
+
+    <article class="for">
+        <h2>for (초기값;조건;증감값)</h2>
+        <div></div>
+    </article>
+
+    <article class="for_calc">
+        <h2>for (초기값;조건;증감값)</h2>
+        <div></div>
+
+    </article>
+
+    <script>
+        // =============== 산술당 연산자 ==============
+
+        var calc_1 = document.querySelector('.calc_1 div');
+
+        calc_1.innerHTML = '(20+20)*40/2=>' + ((20 + 20) * 40 / 2);
+
+
+        // =============== 할당 연산자 ==============
+
+
+        var calc_2 = document.querySelector('.calc_2 div');
+        var ex1 = (20 + 20) * 40 / 2;
+
+        calc_2.innerHTML = 'ex1 /= $200 =>' + '$' + (ex1 /= 200);
+
+
+        // =============== 비교 연산자 ==============
+
+        var calc_3 = document.querySelector('.calc_3 div');
+
+        calc_3.innerHTML = '10 !== 20' + (10 !== 20);
+
+        if (10 != 20) {
+            calc_3.textContent = '진실';
+        } else {
+            calc_3.textContent = '거짓';
+        }
+
+
+        // =============== for ==============
+
+        var result = document.querySelector('.for div');
+        var i = 0;
+
+
+        // for (초기값 var i=0; 조건 i<10 ;증감값 i=i+1)
+
+        for (var i = 1; i <= 10; i = i + 1) {
+            result.innerHTML += '<br>' + i;
+        }
+
+
+        // ==============================================
+
+
+        var result = document.querySelector('.for_calc div');
+        var sum = 0;
+
+
+        for (var i = 1; i <= 10; i = i + 1) {
+
+            result.innerHTML += '<br>' + sum + '+' + i;
+            sum += i;
+            result.innerHTML += '=' + sum;
+
+            result.innerHTML += '<br>' + (sum / 2);
+        }
+
+        // sum = sum + i;
+        // console.log(sum);
+        // result.textContent = sum;
+
+    </script>
+
+
+    <!--================================ 2 ==================================-->
+
+
+    <article class="for_if">
+        <h2>for 반복문, if 조건문</h2>
+        <div></div>
+    </article>
+
+
+
+    <script>
+        var result = document.querySelector('.for_if div');
+        var total = 0;
+        var len = 0; //변수가 숫자인지 문자인지 알아보기 위해 0을 넣어봄
+
+        for (var i = 1; i <= 10; i = i + 1) {
+            if (i == 7) {
+                result.innerHTML += '<br>' + i;
+            }
+        }
+
+
+        for (var i = 1; i <= 10; i = i + 1) {
+            if (i % 2 == 0) {
+                result.innerHTML += '<br>' + i;
+            }
+        }
+
+        for (var i = 1; i <= 10; i = i + 1) {
+            if (i % 2 == 0) {
+                result.innerHTML += '<br>' + i;
+                total += i;
+
+                len += 1;
+
+            }
+        }
+        result.innerHTML += '<br>' + total;
+        result.innerHTML += '<br>짝수의 개수는? ' + len;
+
+    </script>
+
+    <!--====================== 2======================================-->
+
+    <article class="for_if_ex">
+        <h2>for 반복문, if 조건문</h2>
+        <div></div>
+    </article>
+
+    <script>
+        var result = document.querySelector('.for_if_ex div');
+        var sum = 0;
+        var total = 0;
+        var len = 0;
+        
+        for (var i = 1; i <= 30; i = i + 1) {
+
+            result.innerHTML += '<br>' + sum + '+' + i;
+            sum += i;
+            result.innerHTML += '=' + sum;
+        }
+
+        
+        for (var i = 1; i <= 30; i = i+1) {
+            if (i%2 !=0) {
+                result.innerHTML += '<br>' + i;
+            }
+        }
+        
+        
+        for (var i = 1; i <= 30; i = i+1) {
+            if (i%2 != 0) {
+                result.innerHTML += '<br>' + i;
+                total += i;
+                
+                len += 1;
+            }
+        }
+        result.innerHTML += '<br>홀수의 합은? ' + total;
+        result.innerHTML += '<br>홀수의 개수는? ' + len;
+
+        
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

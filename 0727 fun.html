@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article class="fun_s1">
+        <h2> fun basic</h2>
+        <div>함수를 이용한 명령 반복 실행</div>
+    </article>
+
+    <script>
+        var s1 = document.querySelector('.fun_s1 div');
+
+        function funS1() {
+            s1.textContent = '1.hello';
+        }
+        funS1();
+
+        function funS1_2(a) {
+            s1.innerHTML += '<br>' + a;
+        }
+        // a = 함수 안에서만 사용 가능
+        funS1_2('2.hello');
+        funS1_2('3.world');
+
+    </script>
+
+    <!--==================================================-->
+
+    <article class="fun_s2">
+        <h2> fun 함수를 이용한 연산</h2>
+        <p>
+            <input type="text" name="a">
+            <input type="text" name="b">
+            <button>합계</button>
+        </p>
+        <div>출력값</div>
+    </article>
+
+    <script>
+        var s2 = document.querySelector('.fun_s2 div');
+        var s2btn = document.querySelector('.fun_s2 p button');
+        var s2A = document.querySelector('.fun_s2 p input[name=a]');
+        var s2B = document.querySelector('.fun_s2 p input[name=b]');
+
+        function funS2(a, b) {
+            s2.innerHTML = a + b;
+        }
+
+        s2btn.addEventListener('click', function() {
+            funS2(parseInt(s2A.value), parseInt(s2B.value));
+        }); //parseInt 자스 내장 함수
+
+    </script>
+
+    <!--=====================================================-->
+
+    <style>
+        .fun_s3 input {
+            transition: .5s;
+        }
+
+    </style>
+
+    <article class="fun_s3">
+        <h2> fun 함수를 이용한 오브젝트 이동</h2>
+        <p>
+            <input type="text" name="a">
+            <button>이동</button>
+        </p>
+        <div>이동한 전체값</div>
+
+        <div class="ex"></div>
+    </article>
+
+    <script>
+        var s3 = document.querySelector('.fun_s3 div');
+        var s3btn = document.querySelector('.fun_s3 p button');
+        var s3A = document.querySelector('.fun_s3 p input[name=a]');
+
+        var move = 0;
+
+        function funS3(a) {
+            s3A.style.marginLeft = a + 'px';
+            s3.textContent = a;
+        }
+
+        s3btn.addEventListener('click', function() {
+            move += parseInt(s3A.value);
+            //s3.textContent = move;
+            funS3(move);
+        });
+
+
+        /*=====================================================*/
+
+
+
+        function arg() { //...Arg
+
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+
+        }
+
+        arg(50, 90, 60, 740, 060, 30, 50, 40, 90, 5, 0, 680, 650, 20, 40, 80);
+
+    </script>
+
+    <!--
+1. 데이터 구분 - 문자, 숫자, 변수, 함수
+2. 연산 방법
+3. if() 조건문 사용 방법
+4. for 반복문 제어
+5. function 함수
+-->
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="result"></div>
+    
+
+    <script>
+        var result = document.querySelector('.result');
+
+        var id = prompt('id');
+        var password = prompt('password');
+        
+        if(id == 'bead'){ /*명령 실행 시 항상 {} 안에 명령어*/
+            result.textContent = 'Welcome';
+        }else{ /*a != 'bead'*/
+            result.textContent = 'Try again';
+        }
+        
+        if(id == 'bead' && password == 'asdf'){
+            result.textContent = 'Bienvenu'
+        }else{
+            result.textContent = 'essayez de nouvau'
+        }
+
+        /*console.log(result);*/
+
+
+        /*
+           < , > , == , <= , >= , !=  
+        =는 무조건 오른쪽. 
+        
+        문자도 가능. 'a' == 'a' 'a' <= 'b'
+        
+        'a' == 'a' && 'b' == 'b'  && 두 조건 모두 참일때만 true
+        'a' == 'a' || 'b' == 'b'  || 둘 중 하나만 참이라도 true
+        */
+        
+    </script>
+
+
+
+
+
+</body></html>

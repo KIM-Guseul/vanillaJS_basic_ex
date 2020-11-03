@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article class="for_array">
+        <h2>for & array</h2>
+        <div></div>
+    </article>
+
+
+    <script>
+        var result = document.querySelector('.for_array div');
+
+        var arr = [80, 90, 60, 70];
+        var arr2 = ['<p></p>', '<p></p>', '<p></p>'];
+
+        //console.log(arr2);
+
+        /*for(var i=0; i<arr.length; i++){
+            result.textContent += arr[i];
+        }*/
+
+
+
+        // ============ div 자식요소로 <p></p> 3개
+        for (var i = 0; i < arr2.length; i++) {
+            result.innerHTML += arr2[i];
+            // result.textContent += arr2[i]; <p></p>를 문자로 인식.
+        }
+
+
+
+
+        // ============ p tag 자식요소로 <span>0</span>
+        var pTag = document.querySelectorAll('.for_array div p'); //querySelectorAll 복수 선택. 배열과 유사한 형태
+        // 브라우저가 p태그를 인식하고 나서 쓸 수 있으니까
+
+        //console.log(pTag[0]); //NodeList 유사배열
+
+        for (var i = 0; i < arr2.length; i++) {
+            //i++ 1씩 증가 i-- 1씩 감소
+            pTag[i].innerHTML = '<span>' + i + '</span>';
+        }
+
+
+
+        // ============= hello world
+        var arr3 = 'hello world';
+        console.log(arr3.length);
+        //문자도 유사배열. arr3.length arr[0] 다 돼..
+
+        for (var i = 0; i < arr3.length; i++) {
+            result.innerHTML += '<em>' + arr3[i] + '</em>';
+        }
+
+
+        // ============= for & array
+        var h2 = document.querySelector('h2'); //h2 자체
+        var h2Txt = h2.textContent; //h2안의 텍스트만 
+        console.log(h2Txt.length);
+
+        h2.textContent = ''; //기존 데이터 삭제
+
+        for (var i = 0; i < h2Txt.length; i++) {
+            h2.innerHTML += '<em>' + h2Txt[i] + '</em>';
+        }
+
+
+
+        // ============= 증감 or 감소 연산자
+
+        var z = 10;
+
+        console.log(z++); //10 z가 1씩 증가하라는 명령만 있는 상태
+        console.log(z); //11 명령 실행
+
+        console.log(z--); //11 
+        console.log(z); //10
+
+        console.log(++z); //11 현재 자리에서 명령 바로 실행
+        // z = z+1;  console.log(z); / z += 1;
+
+        console.log(--z); //10
+        // z = z-1;  console.log(z); / z -= 1;
+    </script>
+
+    <!--======================== ex=======================-->
+
+    <article class="array_ex1">
+        <hr>
+        <h2>array ex1</h2>
+        <div>
+            <input type="number" name="ex1">
+            <input type="number" name="ex2">
+            <input type="number" name="ex3">
+            <button>확인</button>
+        </div>
+    </article>
+
+
+    <script>
+        
+        var inputNode = document.querySelectorAll('.array_ex1 input');
+        var btnNode = document.querySelector('.array_ex1 button');
+        
+
+        btnNode.addEventListener('click', function() {
+
+            for (var i = 0; i < inputNode.length; i++) {
+                inputNode.innerHTML += inputNode[i].value;
+
+                console.log(inputNode[i].value);
+            }
+
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>

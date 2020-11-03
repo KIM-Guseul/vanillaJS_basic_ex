@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="login">
+        <input type="text" name="id" placeholder="id" > <!-- value="bead" -->
+        <input type="password" name="pw" placeholder="password">
+        <input type="submit" name="ok">
+    </div>
+    
+    <div class="result"></div>
+
+
+    <script>
+        
+        var id = document.querySelector('input[name=id]');
+        var pw = document.querySelector('input[name=pw]');
+        var button = document.querySelector('input[name=ok]');
+        
+        
+        var result = document.querySelector('.result');
+    
+        button.addEventListener('click',function(){
+            
+            var idValue = id.value; /*id.value : id input에 작성한 값*/
+            var pwValue = pw.value;
+             
+/*          alert(idValue); 
+            alert(pwValue);
+            로 input값 제대로 가져오는지 확인*/
+            
+            if(idValue == 'bead' && pwValue == 'asdf'){
+                result.textContent = 'WELCOME';
+            }else{
+                result.textContent = 'TRY AGAIN';
+            }
+        });
+        
+    </script>
+
+
+
+
+
+</body></html>

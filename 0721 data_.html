@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article class="calc_1">
+        <h2>산술 연산자</h2>
+        <div></div>
+    </article>
+
+    <article class="calc_2">
+        <h2>할당 연산자</h2>
+        <div></div>
+    </article>
+
+    <article class="calc_3">
+        <h2>비교 연산자</h2>
+        <div></div>
+    </article>
+
+    <article class="calc_4">
+        <h2>array 배열</h2>
+        <div></div>
+    </article>
+
+ 
+
+
+    <article class="calc_ex">
+        <h2>ex</h2>
+        <div></div>
+    </article>
+
+
+    <script>
+        // number숫자 , string문자 , array배열
+
+        var dataType = Number(10);
+        var dataType = String(10);
+        var dataType = Array(10, 20);
+
+        var dataType = 10;
+        var dataType = '10';
+        var dataType = [10, 20];
+
+
+
+        // =============== 산술 연산자 ==============
+
+        var calc_1 = document.querySelector('.calc_1 div');
+
+        calc_1.innerHTML = '10+10 =>' + (10 + 10);
+        calc_1.innerHTML += '<br>20*10 =>' + (20 * 10);
+        calc_1.innerHTML += '<br>2**3 =>' + (2 ** 3);
+        calc_1.innerHTML += '<br>30/10 =>' + (30 / 10);
+        calc_1.innerHTML += '<br>6 % 5 =>' + (6 % 5);
+        // + 없으면 기존 데이터 삭제하고 마지막값만 얻음
+        //number + string = string
+
+
+        console.log('10+10 =>' + (10 + 10));
+        console.log('20*10 =>' + (20 * 10));
+        console.log('2**3 =>' + (2 ** 3)); //2의 3승
+        console.log('30/10 =>' + (30 / 10));
+        console.log('6%5 =>' + (6 % 5)); //나머지
+
+
+        // =============== 할당 연산자 ==============
+        var ex1 = 10;
+        ex1 += 2; //숫자 넣으면 바로 연산됨.
+        ex1 -= 2;
+        ex1 *= 2;
+        ex1 /= 2;
+        ex1 %= 2;
+
+        console.log(ex1);
+
+
+        //1씩 증가 : (ex1 += 1);
+        //2씩 증가 : (ex1 += 2);
+        // 슬라이드 사이즈 : (100 * 1 + '%');
+
+        var calc_2 = document.querySelector('.calc_2 div');
+
+        calc_2.innerHTML = 'ex1 += 10 =>' + (ex1 += 10);
+        calc_2.innerHTML += '<br>ex1 -= 10 =>' + (ex1 -= 10);
+        calc_2.innerHTML += '<br>ex1 *= 10 =>' + (ex1 *= 10);
+        calc_2.innerHTML += '<br>ex1 /= 10 =>' + (ex1 /= 10);
+        calc_2.innerHTML += '<br>ex1 %= 10 =>' + (ex1 %= 10);
+
+        console.log('ex1 += 10 =>' + (ex1 += 10));
+        console.log('ex1 -= 10 =>' + (ex1 -= 10));
+        console.log('ex1 *= 10 =>' + (ex1 *= 10));
+        console.log('ex1 /= 10 =>' + (ex1 /= 10));
+        console.log('ex1 %= 10 =>' + (ex1 %= 10));
+
+
+        // =============== 비교 연산자 ==============
+
+        var calc_3 = document.querySelector('.calc_3 div');
+
+        calc_3.innerHTML = '10 == 10' + (10 == 10);
+        calc_3.innerHTML += '<br>10 === 10' + (10 === 10);
+        calc_3.innerHTML += '<br>10 != 20' + (10 != 20);
+        calc_3.innerHTML += '<br>10 !== 20' + (10 !== 20);
+        calc_3.innerHTML += '<br>20 > 10' + (20 > 10);
+        calc_3.innerHTML += '<br>20 >= 10' + (20 >= 10);
+        calc_3.innerHTML += '<br>10 < 20' + (10 < 20);
+        calc_3.innerHTML += '<br>10 <= 20' + (10 <= 20);
+
+        /*10 == 10 좌항 우항 값이 동등 (true)
+        
+        10 === 10 좌항 우항 (type & data)값이 같으면 true
+        10 === '10' false number / String
+        
+        10 != 20 좌항 우항 다르면 true
+        10 !== '20' 좌항 우항 (type & data)값이 다르면 true
+        
+        20 > 10 좌항이 우항보다 크면 true
+        20 >= 10 좌항이 우항보다 크거나 같으면 true
+        
+        10 < 20
+        10 <= 20 */
+
+
+        // =============== 배열 ==============
+
+        var calc_4 = document.querySelector('.calc_4 div');
+
+        var arr = [80, 90, 60, 50, 40, 70, 80, 90, 100];
+        var total = arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5];
+        var avg = total / arr.length;
+
+
+        calc_4.innerHTML = '총점 : ' + total + '점 / 평균 : ' + avg;
+
+
+        /*calc_4.innerHTML += '<br>'+arr[0];
+        calc_4.innerHTML += '<br>'+arr[1];
+        calc_4.innerHTML += '<br>'+arr[2];
+        calc_4.innerHTML += '<br>'+arr[3];
+        calc_4.innerHTML += '<br>'+arr[4];
+        calc_4.innerHTML += '<br>'+arr[5];*/
+
+        for (var i = 0; i < arr.length; i++) { //배열의 조건의 수만큼 명령을 "반복"하여 실행
+            calc_4.innerHTML += '<br>' + arr[i];
+        }
+
+
+        // console.log('총점 : '+total+'점 / 평균 : '+avg);
+
+
+      
+
+        // ============== 조건문 ex ==============
+
+        var calc_ex = document.querySelector('.calc_ex div');
+
+        calc_ex.innerHTML = '10 !== 20' + (10 !== 20);
+
+        if (10 !== 10) {
+            calc_ex.textContent = '진실';
+        } else {
+            calc_ex.textContent = '거짓';
+        }
+
+    </script>
+
+
+</body>
+
+</html>

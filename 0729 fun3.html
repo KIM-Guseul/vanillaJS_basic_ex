@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .fun_ex1 div {
+            position: relative;
+            border: 1px solid #999;
+        }
+
+        .fun_ex1 div p {
+            width: 100px;
+            height: 100px;
+            background: #00f;
+        }
+
+        .fun_ex1 div span {
+            position: absolute;
+            left: 960px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: #000;
+        }
+    </style>
+
+
+    <article class="fun_ex1">
+        <h2> fun (ex1) </h2>
+        <button>start</button>
+        <div>
+            <p></p>
+            <span></span>
+        </div>
+    </article>
+
+    <!--
+   1.해당 element 설정
+   -->
+
+    <script>
+        var ex1 = document.querySelector('.fun_ex1 div');
+        var exP = ex1.querySelector('p'); //도 가능
+        var exSpan = ex1.querySelector('span');
+        var exBtn = document.querySelector('.fun_ex1 button');
+
+        // 1. 글로벌 영역에 변수 주기 - 전역변수. 어디서든 쓸 수 있는 변수
+        //var x;
+
+        function fun1() {
+            /*var 글로별 영역에 변수*/
+            var x = exSpan.offsetLeft;
+            //변수는 함수 안에서만 실행. 다른 함수에서 쓰려면 다시 가져와야해
+            // exP.style.marginLeft = x+'px';
+            //exSpan.offsetLeft; 화면 좌측으로부터의 거리
+            //console.log(x);
+            fun2(x); /*2. fun2에 변수 대입*/
+            //fun1 작업 완료 후 fun2 실행
+        }
+
+        function fun2(a) {
+            //지역변수. 함수 안에서만 쓸 수 있어
+
+            var w = exSpan.offsetWidth;
+            var h = exSpan.offsetHeight;
+
+            exP.style = 'margin-left:' + a + 'px; width: ' + w + 'px; height: ' + h + 'px;';
+
+
+            // 단위 까먹지마!!!!!!
+            //fun1(); 함수 안에서 다른 함수 실행
+        }
+
+        exBtn.addEventListener('click', fun1);
+
+        // =    exBtn.addEventListener('click', function(){
+        //          fun1()
+        //      }); 
+    </script>
+
+
+    <!--==================================================-->
+    <style>
+        .fun_ex2 img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .fun_ex2 div {
+            position: relative;
+        }
+
+        .fun_ex2 p {
+            border: 2px solid #f00;
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 0;
+            transition: .5s;
+        }
+    </style>
+
+    <article class="fun_ex2">
+        <h2> fun (ex2) </h2>
+        <div>
+            <img data-num="0" src="img/f01.jpg">
+            <!--data-num="마음대로" 사용자가 임의로 줄수있는 성격-->
+            <img data-num="1" src="img/f02.jpg">
+            <img data-num="2" src="img/f03.jpg">
+            <p></p>
+        </div>
+    </article>
+
+    <script>
+        var exImg = document.querySelectorAll('.fun_ex2 div img');
+        var ex2P = document.querySelector('.fun_ex2 div p');
+
+        function funImg(n) {
+            var pW = exImg[n].offsetWidth;
+            var pH = exImg[n].offsetHeight;
+            var pL = exImg[n].offsetLeft;
+            var pT = exImg[n].offsetTop;
+
+            ex2P.style = "width: " + pW + "px; height:" + pH + "px; left: " + pL + "px; top:" + pT + "px;"
+        }
+
+
+
+        //2. data-num
+
+        for (var i = 0; i < exImg.length; i++) {
+
+            exImg[i].addEventListener('click', function() {
+
+                // this.dataset.num //this 내가 클릭하는 '그' 대상
+
+                var idx = this.dataset.num
+                funImg(idx); //변수 바로 넣어줘도 돼
+            });
+        }
+
+
+        // 1. let 
+
+        /*        for (let i = 0; i < exImg.length; i++) { 
+                    //let i를 따로따로 선언할 수 있어(각각의 i값을 유지)
+
+                    exImg[i].addEventListener('click', function() {
+                        console.log(i);
+                        funImg(i);
+                    });
+                } */
+
+
+
+        // exImg[1].addEventListener('click', funImg);
+
+        //        exImg[0].addEventListener('click', function() {
+        //            funImg(0)
+        //        });
+        //        exImg[1].addEventListener('click', function() {
+        //            funImg(1)
+        //        });
+        //        exImg[2].addEventListener('click', function() {
+        //            funImg(2)
+        //        }); 반복문 for 이용해서 줄일 수 있어
+    </script>
+
+    <!--=========================================================-->
+
+    <style>
+        .fun_ex3 img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+        }
+
+        .fun_ex3 div {
+            position: relative;
+            height: 100px;
+        }
+    </style>
+
+    <article class="fun_ex3">
+        <h2> fun (ex3) </h2>
+        <div>
+            <!--
+            <img src="img/f01.jpg">
+            <img src="img/f02.jpg">
+            <img src="img/f03.jpg">
+-->
+        </div>
+    </article>
+
+    <script>
+        var ex3 = document.querySelector('.fun_ex3 div');
+        var imgAdd = ["img/f01.jpg", "img/f02.jpg", "img/f03.jpg"];
+
+        for (var j = 0; j < imgAdd.length; j++) {
+            
+            ex3.innerHTML += "<img src=" + imgAdd[j] + ">";
+
+            console.log(imgAdd[j]);
+        };
+        
+        var img3 = ex3.querySelectorAll('img');
+
+        for (var j = 0; j < imgAdd.length; j++) {
+            
+            img3[j].style = "left :" + (100 * j) + "px;";
+            
+            console.log(100 * j);
+        };
+        
+    </script>
+
+
+
+
+
+
+
+</body></html>

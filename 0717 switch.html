@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="rcp"></div>
+
+    <script>
+        
+        var com = Math.floor(Math.random() * 3); //0 1 2
+        var comData;
+
+        switch (com) {
+            case 0:
+                comData = '바위';
+                break;
+                //case 1:comData = '가위'; break;
+            case 2:
+                comData = '보';
+                break;
+            default:
+                comData = '가위'; //if문의 else같은 존재. break 필요 없어. 끝내고 나오는애라서
+        }
+        
+        console.log(comData);
+
+
+        /*            if (com == 0) {
+                        comData = '바위';
+                    } else if (com == 1) {
+                        comData = '가위';
+                    } else {
+                        comData = '보';
+                    }*/
+        
+        //======================================================
+        
+        var arr = ['수박', '참외', '복숭아', '딸기', '사과']; /*0 1 2 3 순*/
+        
+        var len = arr.length;
+        /*console.log(len);*/
+        
+        var arrIdx/*두번째 단어 첫철자는 대문자*/ = Math.floor(Math.random() * len /* arr.length 바로 넣어줘도 돼*/); 
+        
+        /*console.log(arr[arrIdx]);*/
+
+        
+        
+    </script>
+
+   
+   
+   
+   
+   
+   
+   
+   
+    <!--
+Math.random() 만수 랜덤/ 연산 가능 Math.random()*3
+Math.floor(Math.random()) 소숫점 버림 Math.floor(Math.random()*3)
+-->
+
+
+
+</body></html>
